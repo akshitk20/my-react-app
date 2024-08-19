@@ -1,17 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import {Greeting} from './Greeting';
 
 function App() {
-  const isMorning = new Date().getHours();
-  let greeting = isMorning < 12 ?
-  <h3>Good Morning!</h3> :
-  <h3>Good Evening!</h3>;
+  
   const learning = "LEARNING";
   const url = "https://reactjs.org";
   return (
     <div className="App">
       <header className="App-header">
-      {greeting}
+        <Greeting />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           My first REACT {learning} App
