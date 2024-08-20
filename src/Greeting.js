@@ -1,14 +1,16 @@
 import React from 'react';
 
-export const Greeting = () => {
+export const Greeting = ({name, numberOfMessages}) => {
+    //console.log(props);
+    //const {name, numberOfMessages} = props;
     const isMorning = new Date().getHours();
     let greetingHeader = isMorning
-    ?  <h3>Good Morning!</h3>  
-    :  <h3>Good Evening!</h3> 
+    ?  <h3>Good Morning {name}!</h3>  
+    :  <h3>Good Evening {name}!</h3> 
     return (
      <>
         {greetingHeader} 
-       <h3>You have 5 new messages !</h3>
+       <h3>You have {numberOfMessages} new messages !</h3>
      </>
     );
  
