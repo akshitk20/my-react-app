@@ -6,7 +6,7 @@ import { CounterButton } from './CounterButton';
 import { CongratulationsMessage } from './CongratulationsMessage';
 import React, {useState} from 'react';
 import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
-import { HomePage, CounterButtonPage, PeopleListPage } from './pages'; 
+import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage } from './pages'; 
 
 
 function App() {
@@ -49,13 +49,15 @@ function App() {
       </header> */}
    
       <Router>
-      <Link to="/counter">Go to Counter Page</Link>
-      <Link to="/people-list">Go to People Link page</Link>
-         <Routes>
-              <Route path="/" exact element={ <HomePage/>} />
-              <Route path="/counter/:name" element={<CounterButtonPage/>} />
-              <Route path="/people-list" element={ <PeopleListPage/>} />
-        </Routes>
+          <Link to="/counter/:name">Go to Counter Page</Link>
+          <Link to="/people-list">Go to People Link page</Link>
+          <Routes>
+                <Route path="/" exact element={ <HomePage/>} />
+                <Route path="/counter/:name" element={<CounterButtonPage/>} />
+                <Route path="/people-list" element={ <PeopleListPage/>} />
+                <Route element={ <NotFoundPage/>} />
+          </Routes>
+     
       </Router>
     </div>
   );

@@ -6,7 +6,7 @@ export const Greeting = ({name, numberOfMessages}) => {
     console.log("Rendering Greeting")
     if (!name) return null;
     const isMorning = new Date().getHours();
-    let greetingHeader = isMorning
+    let greetingHeader = isMorning < 12
     ?  <h3>Good Morning {name}!</h3>  
     :  <h3>Good Evening {name}!</h3> 
     return (
