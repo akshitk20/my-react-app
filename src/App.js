@@ -24,8 +24,10 @@ function App() {
   
   const learning = "LEARNING";
   const url = "https://reactjs.org";
+  
   const [numberOfClicks, setNumberOfClicks] = useState(0);
-    
+  const [hideMessage, setHideMessage] = useState(false);
+
   const increment = () => setNumberOfClicks(numberOfClicks+1);
 
   // const displayAlert = () => {
@@ -49,7 +51,11 @@ function App() {
         >
           Learn React
         </a> */}
-      <CongratulationsMessage numberOfClicks={numberOfClicks} threshold={10}/> 
+       {hideMessage ? null 
+       : <CongratulationsMessage numberOfClicks={numberOfClicks} 
+       threshold={10} 
+       onHide={() => setHideMessage(true)}/>} 
+       
       <CounterButton onIncrement={increment} numberOfClicks={numberOfClicks}/> 
       </header>
     </div>
