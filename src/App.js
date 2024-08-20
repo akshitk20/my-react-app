@@ -53,7 +53,7 @@ function App() {
       <Link to="/people-list">Go to People Link page</Link>
          <Routes>
               <Route path="/" exact element={ <HomePage/>} />
-              <Route path="/counter" element={<CounterButtonPage/>} />
+              <Route path="/counter/:name" element={<CounterButtonPage/>} />
               <Route path="/people-list" element={ <PeopleListPage/>} />
         </Routes>
       </Router>
