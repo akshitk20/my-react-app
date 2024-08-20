@@ -21,11 +21,15 @@ function App() {
   
   const learning = "LEARNING";
   const url = "https://reactjs.org";
+  // const displayAlert = () => {
+  //   alert('Hello');
+  // }
   return (
     <div className="App">
       <header className="App-header">
         <Greeting name="Akshit" numberOfMessages={55}/>
         <PeopleList people={people}/>
+        <button onClick={() => alert('Hello')}>Click Me!</button>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           My first REACT {learning} App
