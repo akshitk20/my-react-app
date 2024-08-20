@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import {Greeting} from './Greeting';
 import { PeopleList } from './PeopleList';
+import { CounterButton } from './CounterButton';
 
 const people = [{
   name: 'John',
@@ -27,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Greeting name="Akshit" numberOfMessages={55}/>
+        {/* <Greeting name="Akshit" numberOfMessages={55}/>
         <PeopleList people={people}/>
         <button onClick={() => alert('Hello')}>Click Me!</button>
         <img src={logo} className="App-logo" alt="logo" />
@@ -41,7 +42,9 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
+      <CounterButton/> 
+      <Greeting name="Akshit" numberOfMessages={55}/>
       </header>
     </div>
   );
