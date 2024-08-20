@@ -3,6 +3,8 @@ import './App.css';
 import {Greeting} from './Greeting';
 import { PeopleList } from './PeopleList';
 import { CounterButton } from './CounterButton';
+import { CongratulationsMessage } from './CongratulationsMessage';
+import React, {useState} from 'react';
 
 const people = [{
   name: 'John',
@@ -22,6 +24,10 @@ function App() {
   
   const learning = "LEARNING";
   const url = "https://reactjs.org";
+  const [numberOfClicks, setNumberOfClicks] = useState(0);
+    
+  const increment = () => setNumberOfClicks(numberOfClicks+1);
+
   // const displayAlert = () => {
   //   alert('Hello');
   // }
@@ -43,8 +49,8 @@ function App() {
         >
           Learn React
         </a> */}
-      <CounterButton/> 
-      <Greeting name="Akshit" numberOfMessages={55}/>
+      <CongratulationsMessage numberOfClicks={numberOfClicks} threshold={10}/> 
+      <CounterButton onIncrement={increment} numberOfClicks={numberOfClicks}/> 
       </header>
     </div>
   );
