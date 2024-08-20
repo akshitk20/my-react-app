@@ -3,6 +3,7 @@ import React from 'react';
 export const Greeting = ({name, numberOfMessages}) => {
     //console.log(props);
     //const {name, numberOfMessages} = props;
+    if (!name) return null;
     const isMorning = new Date().getHours();
     let greetingHeader = isMorning
     ?  <h3>Good Morning {name}!</h3>  
@@ -10,7 +11,7 @@ export const Greeting = ({name, numberOfMessages}) => {
     return (
      <>
         {greetingHeader} 
-       <h3>You have {numberOfMessages} new messages !</h3>
+       {numberOfMessages===0 ? null : <h3>You have {numberOfMessages} new messages !</h3>}
      </>
     );
  

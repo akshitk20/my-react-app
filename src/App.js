@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Greeting name="Akshit" numberOfMessages={5}/>
+        <Greeting name="Akshit" numberOfMessages={55}/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           My first REACT {learning} App
