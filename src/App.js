@@ -5,20 +5,9 @@ import { PeopleList } from './PeopleList';
 import { CounterButton } from './CounterButton';
 import { CongratulationsMessage } from './CongratulationsMessage';
 import React, {useState} from 'react';
+import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
+import { HomePage, CounterButtonPage, PeopleListPage } from './pages'; 
 
-const people = [{
-  name: 'John',
-  age: 40,
-  hairColor: 'brown' 
-},{
-  name: 'Helga',
-  age: 25,
-  hairColor: 'red' 
-},{
-  name: 'Dwayne',
-  age: 55,
-  hairColor: 'blonde' 
-}];
 
 function App() {
   
@@ -35,8 +24,8 @@ function App() {
   // }
   return (
     <div className="App">
-      <header className="App-header">
-        {/* <Greeting name="Akshit" numberOfMessages={55}/>
+      {/* <header className="App-header">
+        { <Greeting name="Akshit" numberOfMessages={55}/>
         <PeopleList people={people}/>
         <button onClick={() => alert('Hello')}>Click Me!</button>
         <img src={logo} className="App-logo" alt="logo" />
@@ -50,14 +39,24 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a> */}
+        </a> }
        {hideMessage ? null 
        : <CongratulationsMessage numberOfClicks={numberOfClicks} 
        threshold={10} 
        onHide={() => setHideMessage(true)}/>} 
        
       <CounterButton onIncrement={increment} numberOfClicks={numberOfClicks}/> 
-      </header>
+      </header> */}
+   
+      <Router>
+      <Link to="/counter">Go to Counter Page</Link>
+      <Link to="/people-list">Go to People Link page</Link>
+         <Routes>
+              <Route path="/" exact element={ <HomePage/>} />
+              <Route path="/counter" element={<CounterButtonPage/>} />
+              <Route path="/people-list" element={ <PeopleListPage/>} />
+        </Routes>
+      </Router>
     </div>
   );
 }
