@@ -1,6 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
 import {Greeting} from './Greeting';
+import { PeopleList } from './PeopleList';
+
+const people = [{
+  name: 'John',
+  age: 40,
+  hairColor: 'brown' 
+},{
+  name: 'Helga',
+  age: 25,
+  hairColor: 'red' 
+},{
+  name: 'Dwayne',
+  age: 55,
+  hairColor: 'blonde' 
+}];
 
 function App() {
   
@@ -10,6 +25,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Greeting name="Akshit" numberOfMessages={55}/>
+        <PeopleList people={people}/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           My first REACT {learning} App
