@@ -1,10 +1,6 @@
-import React, {useState} from "react";
+import React from "react";
 
-export const ControlledFormPage = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [favouriteColor, setFavoriteColor] = useState('');
-
+export const UncontrolledFormPage = () => {
     return (
         <form>
             <h3>Please Enter your information:</h3>
@@ -27,14 +23,6 @@ export const ControlledFormPage = () => {
                 onChange={e => setFavoriteColor(e.target.value)}
                 />
             </div>
-            <button onClick={e => {
-                alert(`
-                    Your name is ${name}
-                    Your email is ${email}
-                    Your Fav color is ${favouriteColor}
-                `)
-                e.preventDefault(); // to prevent this event from bubbling up the higher component
-            }}>Submit</button>
         </form>
     )
 }
