@@ -1,28 +1,36 @@
 import React from "react";
 
-export const UncontrolledFormPage = () => {
+export const UnControlledFormPage = () => {
+    const nameInput = React.createRef();
+    const emailInput = React.createRef();
+    const favouriteColorInput = React.createRef();
+
     return (
         <form>
             <h3>Please Enter your information:</h3>
             <div>
-                <input type="text" 
-                placeholder="Name"
-                value={name} 
-                onChange={e => setName(e.target.value)}/>
+                <input ref={nameInput}
+                type="text" 
+                placeholder="Name"/>
             </div>
             <div>
-                <input type="text" 
-                placeholder="Email"
-                value={email}
-                onChange={e => setEmail(e.target.value)}/>
+                <input ref={emailInput}
+                type="text" 
+                placeholder="Email"/>
             </div>
             <div>
-                <input type="text" 
-                placeholder="Favorite Color"
-                value={favouriteColor}
-                onChange={e => setFavoriteColor(e.target.value)}
-                />
+                <input ref={favouriteColorInput} 
+                type="text" 
+                placeholder="Favorite Color"/>
             </div>
+            <button onClick={e => {
+                alert(`
+                Your name is ${nameInput.current.value},
+                Your email is ${emailInput.current.value},
+                Your fav color is ${favouriteColorInput.current.value}
+                `);
+                e.preventDefault();
+            }}>Submit</button>
         </form>
     )
 }

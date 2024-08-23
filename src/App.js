@@ -6,7 +6,7 @@ import { CounterButton } from './CounterButton';
 import { CongratulationsMessage } from './CongratulationsMessage';
 import React, {useState} from 'react';
 import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
-import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage, ProtectedPage, ControlledFormPage } from './pages'; 
+import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage, ProtectedPage, ControlledFormPage, UnControlledFormPage } from './pages'; 
 
 
 function App() {
@@ -57,6 +57,7 @@ function App() {
                 <Route path="/people-list" element={ <PeopleListPage/>} />
                 <Route path="/protected" element={ <ProtectedPage/>} />
                 <Route path='/controlled' element={<ControlledFormPage/>} />
+                <Route path='/un-controlled' element={<UnControlledFormPage/>} />
                 <Route element={ <NotFoundPage/>} />
           </Routes>
      
