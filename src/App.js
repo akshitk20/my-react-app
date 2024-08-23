@@ -7,7 +7,8 @@ import { CongratulationsMessage } from './CongratulationsMessage';
 import React, {useState} from 'react';
 import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
 import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage, ProtectedPage, ControlledFormPage, UnControlledFormPage } from './pages'; 
-
+import { NavBar } from './pages/NavBar';
+import { FormsNavBar } from './FormsNavBar';
 
 function App() {
   
@@ -51,16 +52,20 @@ function App() {
       <Router>
           <Link to="/counter/:name">Go to Counter Page</Link>
           <Link to="/people-list">Go to People Link page</Link>
+          <NavBar/>
+          <div className='App-header'>
           <Routes>
                 <Route path="/" exact element={ <HomePage/>} />
                 <Route path="/counter/:name" element={<CounterButtonPage/>} />
                 <Route path="/people-list" element={ <PeopleListPage/>} />
                 <Route path="/protected" element={ <ProtectedPage/>} />
-                <Route path='/controlled' element={<ControlledFormPage/>} />
-                <Route path='/un-controlled' element={<UnControlledFormPage/>} />
+                <Route path="/forms">
+                  <Route path='/forms/controlled' element={ <ControlledFormPage/>}></Route>
+                  <Route path='/forms/un-controlled' element={ <UnControlledFormPage/>}></Route>
+                </Route>
                 <Route element={ <NotFoundPage/>} />
           </Routes>
-     
+          </div>
       </Router>
     </div>
   );
