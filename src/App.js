@@ -6,8 +6,8 @@ import { CounterButton } from './CounterButton';
 import { CongratulationsMessage } from './CongratulationsMessage';
 import React, {useState} from 'react';
 import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
-import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage, ProtectedPage, ControlledFormPage, UnControlledFormPage } from './pages'; 
-import { NavBar } from './pages/NavBar';
+import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage, ProtectedPage, ControlledFormPage, UnControlledFormPage, UserProfilePage } from './pages'; 
+import { NavBar } from './NavBar';
 import { FormsNavBar } from './FormsNavBar';
 
 function App() {
@@ -59,6 +59,7 @@ function App() {
                 <Route path="/counter/:name" element={<CounterButtonPage/>} />
                 <Route path="/people-list" element={ <PeopleListPage/>} />
                 <Route path="/protected" element={ <ProtectedPage/>} />
+                <Route path="/user" element={<UserProfilePage />} />
                 <Route path="/forms">
                   <Route path='/forms/controlled' element={ <ControlledFormPage/>}></Route>
                   <Route path='/forms/un-controlled' element={ <UnControlledFormPage/>}></Route>
