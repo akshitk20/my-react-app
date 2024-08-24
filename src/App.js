@@ -56,7 +56,7 @@ function App() {
           <div className='App-header'>
           <Routes>
                 <Route path="/" exact element={ <HomePage/>} />
-                <Route path="/counter/:name" element={<CounterButtonPage/>} />
+                <Route path="/counter" element={<CounterButtonPage/>} />
                 <Route path="/people-list" element={ <PeopleListPage/>} />
                 <Route path="/protected" element={ <ProtectedPage/>} />
                 <Route path="/user" element={<UserProfilePage />} />

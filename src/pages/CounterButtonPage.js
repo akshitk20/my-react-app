@@ -3,6 +3,7 @@ import { CounterButton } from "../CounterButton";
 import { CongratulationsMessage } from "../CongratulationsMessage";
 import { useParams, useLocation } from "react-router-dom";
 import queryString from 'query-string';
+import { DisplayIf } from "../DisplayIf";
 
 export const CounterButtonPage = () => {
     const [numberOfClicks, setNumberOfClicks] = useState(0);
@@ -10,17 +11,17 @@ export const CounterButtonPage = () => {
     
     const increment = () => setNumberOfClicks(numberOfClicks+1);
   
-    const {name} = useParams();
+   
     const location = useLocation();
     //console.log(queryString.parse(location.search));
     return (
       <>
-      <h1>{name}'s CounterButton Page!</h1>
-         {hideMessage ? null 
-         : <CongratulationsMessage numberOfClicks={numberOfClicks} 
+      <h1> CounterButton Page!</h1>
+       <DisplayIf condition={!hideMessage && numberOfClicks >= 10}>
+        <CongratulationsMessage 
          threshold={10} 
-         onHide={() => setHideMessage(true)}/>} 
-         
+         onHide={() => setHideMessage(true)}/>
+        </DisplayIf> 
         <CounterButton onIncrement={increment} numberOfClicks={numberOfClicks}/> 
       </>
     );
