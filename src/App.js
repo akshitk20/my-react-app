@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
 import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage, ProtectedPage, ControlledFormPage, UnControlledFormPage, UserProfilePage } from './pages'; 
 import { NavBar } from './NavBar';
 import { FormsNavBar } from './FormsNavBar';
+import { UserDataLoader } from './UserDataLoader';
 
 function App() {
   
@@ -59,7 +60,7 @@ function App() {
                 <Route path="/counter" element={<CounterButtonPage/>} />
                 <Route path="/people-list" element={ <PeopleListPage/>} />
                 <Route path="/protected" element={ <ProtectedPage/>} />
-                <Route path="/user" element={<UserProfilePage />} />
+                <Route path="/user" element={<UserProfilePage/>} />
                 <Route path='/forms/controlled' element={ <ControlledFormPage/>}></Route>
                 {/*<Route path="/forms">
                   
