@@ -10,6 +10,7 @@ import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage, ProtectedPag
 import { NavBar } from './NavBar';
 import { FormsNavBar } from './FormsNavBar';
 import { UserDataLoader } from './UserDataLoader';
+import { ThemeContext } from './ThemeContext';
 
 function App() {
   
@@ -25,7 +26,8 @@ function App() {
   //   alert('Hello');
   // }
   return (
-    <div className="App">
+    <ThemeContext.Provider value='light'>
+  <div className="App">
       {/* <header className="App-header">
         { <Greeting name="Akshit" numberOfMessages={55}/>
         <PeopleList people={people}/>
@@ -71,6 +73,8 @@ function App() {
           </div>
       </Router>
     </div>
+    </ThemeContext.Provider>
+  
   );
 }
 
