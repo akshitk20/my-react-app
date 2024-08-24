@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import { Button } from "../Button";
+import { SuccessButton } from "../Button";
 
 export const ControlledFormPage = () => {
     const [name, setName] = useState('');
@@ -27,14 +29,15 @@ export const ControlledFormPage = () => {
                 onChange={e => setFavoriteColor(e.target.value)}
                 />
             </div>
-            <button onClick={e => {
+            <SuccessButton 
+            onClick={e => {
                 alert(`
                     Your name is ${name}
                     Your email is ${email}
                     Your Fav color is ${favouriteColor}
                 `)
                 e.preventDefault(); // to prevent this event from bubbling up the higher component
-            }}>Submit</button>
+            }}>Submit</SuccessButton>
         </form>
     )
 }

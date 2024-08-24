@@ -1,6 +1,7 @@
 import React from "react";
 import { CounterButtonCB } from "./CounterButtonCB";
 import { CongratulationsMessageCB } from "./CongratulationsMessageCB";
+import { DisplayIf } from "../DisplayIf";
 
 export class CounterButtonPageCB extends React.Component {
     state = {
@@ -17,11 +18,11 @@ export class CounterButtonPageCB extends React.Component {
             <>
             <h1> CounterButton Page!</h1>
              <DisplayIf condition={!hideMessage && numberOfClicks >= 10}>
-              <CongratulationsMessage 
+              <CongratulationsMessageCB 
                threshold={10} 
                onHide={() => this.setState({hideMessage : true})}/>
               </DisplayIf> 
-              <CounterButton onIncrement={increment} numberOfClicks={numberOfClicks}/> 
+              <CounterButtonCB onIncrement={increment} numberOfClicks={numberOfClicks}/> 
             </>
           );
     }

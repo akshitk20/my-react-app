@@ -50,7 +50,7 @@ function App() {
       </header> */}
    
       <Router>
-          <Link to="/counter/:name">Go to Counter Page</Link>
+          <Link to="/counter">Go to Counter Page</Link>
           <Link to="/people-list">Go to People Link page</Link>
           <NavBar/>
           <div className='App-header'>
@@ -60,10 +60,11 @@ function App() {
                 <Route path="/people-list" element={ <PeopleListPage/>} />
                 <Route path="/protected" element={ <ProtectedPage/>} />
                 <Route path="/user" element={<UserProfilePage />} />
-                <Route path="/forms">
-                  <Route path='/forms/controlled' element={ <ControlledFormPage/>}></Route>
+                <Route path='/forms/controlled' element={ <ControlledFormPage/>}></Route>
+                {/*<Route path="/forms">
+                  
                   <Route path='/forms/un-controlled' element={ <UnControlledFormPage/>}></Route>
-                </Route>
+                </Route>*/}
                 <Route element={ <NotFoundPage/>} />
           </Routes>
           </div>
